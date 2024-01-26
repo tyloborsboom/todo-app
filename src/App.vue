@@ -1,16 +1,15 @@
 <template>
   <div id="app">
-    <todo-app></todo-app>
+    <ToDoListContainer />
   </div>
 </template>
 
 <script>
- import TodoApp from './components/TodoApp.vue'
+import ToDoListContainer from '@/components/ToDoListContainer.vue'; // Update the path accordingly
 
 export default {
-  name: 'App',
   components: {
-    TodoApp
-  }
-}
+    ToDoListContainer,
+  },
+};
 </script>
