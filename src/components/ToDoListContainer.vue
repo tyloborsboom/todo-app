@@ -1,16 +1,22 @@
 <template>
   <div class="todo-container">
     <h2 class="text-center mt-5">My To-Do Lists</h2>
-    <button @click="addNewList" class="btn btn-success mt-3 mb-3">Add New List</button>
+    <button @click="addNewList" class="btn btn-success mt-3 mb-3">
+      Add New List
+    </button>
 
     <div v-for="(list, index) in todoLists" :key="index" class="list-container">
-      <IndividualList :list="list" @updateList="updateList(index, $event)" @deleteList="deleteList(index)" />
+      <IndividualList
+        :list="list"
+        @updateList="updateList(index, $event)"
+        @deleteList="deleteList(index)"
+      />
     </div>
   </div>
 </template>
 
 <script>
-import IndividualList from '@/components/TodoApp.vue';
+import IndividualList from "@/components/TodoApp.vue";
 
 export default {
   components: {
