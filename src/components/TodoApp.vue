@@ -114,6 +114,8 @@
 export default {
   props: {
     list: Object,
+    listIndex: Number,
+    displayListNameProp: String,
   },
   data() {
     return {
@@ -121,8 +123,9 @@ export default {
       task: "",
       editedTask: null,
       availableStatuses: ["to-do", "in-progress", "finished"],
-      displayListName: "",
+      localDisplayListName: this.displayListNameProp,
       isListNameModalOpen: false,
+      displayListName: "",
     };
   },
   watch: {
@@ -130,6 +133,7 @@ export default {
       immediate: true,
       handler(newVal) {
         this.localList = { ...newVal };
+        this.displayListName = this.localList.title || "";
       },
     },
   },
@@ -143,7 +147,10 @@ export default {
     saveListName() {
       // Handle saving the list name
       this.closeListNameModal();
+      this.$set(this, "displayListName", this.displayListName);
+      this.$emit("saveListNameHandler", this.displayListName, this.listIndex); // Use "saveListNameHandler"
     },
+
     submitTask() {
       if (this.task.length === 0) {
         return;
