@@ -1,5 +1,8 @@
 <template>
-  <div id="topBar2">
+  <div
+    id="topBar2"
+    class="h-8 w-full bg-black text-white flex items-center justify-center drag-region"
+  >
     <span>Top Bar</span>
   </div>
 </template>

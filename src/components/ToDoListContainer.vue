@@ -1,11 +1,14 @@
 <template>
-  <div class="todo-container">
-    <h2 class="text-center mt-5">My To-Do Lists</h2>
-    <button @click="addNewList" class="btn btn-success mt-3 mb-3">
+  <div class="p-5">
+    <h2 class="text-center mt-5 text-3xl">My To-Do Lists</h2>
+    <button
+      @click="addNewList"
+      class="bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 mt-3 mb-3 rounded"
+    >
       Add New List
     </button>
 
-    <div v-for="(list, index) in todoLists" :key="index" class="list-container">
+    <div v-for="(list, index) in todoLists" :key="index" class="mt-4">
       <IndividualList
         :list="list"
         @updateList="updateList(index, $event)"
@@ -43,19 +46,3 @@ export default {
   },
 };
 </script>
-
-<style scoped>
-/* Style for the entire todo container */
-.todo-container {
-  /* Add space around the container */
-  padding: 20px;
-}
-
-/* Style for IndividualList components */
-.list-container {
-  margin-bottom: 20px; /* Add space between lists */
-  padding: 10px; /* Add padding to the individual list container */
-  border: 1px solid #ccc; /* Add a border for better separation */
-  border-radius: 8px; /* Add border radius for a rounded appearance */
-}
-</style>

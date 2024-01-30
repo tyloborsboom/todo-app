@@ -1,13 +1,13 @@
 <template>
-  <div id="app">
+  <div id="app" class="flex flex-col items-stretch justify-start">
     <TopBar2 />
     <ToDoListContainer />
   </div>
 </template>
 
 <script>
-import ToDoListContainer from "@/components/ToDoListContainer.vue"; // Update the path accordingly
-import TopBar2 from "@/components/TopBar2.vue"; // Update the path accordingly
+import ToDoListContainer from "@/components/ToDoListContainer.vue";
+import TopBar2 from "@/components/TopBar2.vue";
 
 export default {
   components: {
@@ -16,12 +16,3 @@ export default {
   },
 };
 </script>
-
-<style scoped>
-div#app {
-  display: flex;
-  flex-flow: column nowrap;
-  align-items: stretch;
-  justify-content: start;
-}
-</style>
