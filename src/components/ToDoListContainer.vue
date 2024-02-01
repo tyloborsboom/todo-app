@@ -1,23 +1,23 @@
 <template>
   <div class="flex p-5">
     <!-- Sidebar with list titles -->
-    <div class="w-1/4 p-4 bg-gray-200">
+    <div class="w-1/4 p-4 bg-fuchsia-200 rounded">
       <h2 class="text-xl font-bold mb-4">My To-Do Lists</h2>
+      <!-- Button to create a new list -->
+      <button
+        @click="addNewList"
+        class="w-full mt-4 mb-2 p-2 bg-fuchsia-500 hover:bg-fuchsia-700 text-black rounded"
+      >
+        <span class="mr-1">New List</span>
+        <i class="fas fa-plus"></i>
+      </button>
       <button
         v-for="(list, index) in todoLists"
         :key="index"
         @click="selectList(index)"
-        class="w-full mb-2 p-2 bg-blue-500 hover:bg-blue-700 text-white font-bold rounded"
+        class="w-full mb-2 p-2 bg-fuchsia-500 hover:bg-fuchsia-700 text-black rounded"
       >
         {{ list.title || "Untitled List" }}
-      </button>
-
-      <!-- Button to create a new list -->
-      <button
-        @click="addNewList"
-        class="w-full mt-4 p-2 bg-green-500 hover:bg-green-700 text-white font-bold rounded"
-      >
-        Create New List
       </button>
     </div>
 
@@ -34,7 +34,7 @@
         />
       </div>
       <div v-else>
-        <p class="text-center">Select a list from the sidebar</p>
+        <p class="text-center font-semibold">Select a list from the sidebar</p>
       </div>
     </div>
   </div>

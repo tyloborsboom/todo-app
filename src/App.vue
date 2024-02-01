@@ -1,5 +1,8 @@
 <template>
-  <div id="app" class="flex flex-col items-stretch justify-start">
+  <div
+    id="app"
+    class="flex flex-col items-stretch justify-start bg-fuchsia-300 h-full w-full"
+  >
     <TopBar2 />
     <ToDoListContainer />
   </div>
